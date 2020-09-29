@@ -1,0 +1,108 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "8a0f171515d93209862c37ea5ae67c2d",
+    "content-hash": "d141c4eb09c3ee4125de51eb82a14cde",
+    "packages": [
+        {
+            "name": "mhdev/calendar",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://pagekit.com/package/mhdev/calendar/1.0.0.zip",
+                "reference": null,
+                "shasum": "4b2169383e587d3b7d61c5b31a638e6d0f90d9e0"
+            },
+            "type": "pagekit-extension",
+            "extra": {
+                "scripts": "scripts.php"
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Heilhecker",
+                    "email": "support@mh-dev.net",
+                    "homepage": "http://www.mh-dev.net"
+                }
+            ],
+            "description": "Calendar extension for Pagekit"
+        },
+        {
+            "name": "pagekit/blog",
+            "version": "1.0.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://pagekit.com/package/pagekit/blog/1.0.7.zip",
+                "reference": null,
+                "shasum": "690786ff41645c25d7c180a3781ddc51205bb0ad"
+            },
+            "archive": {
+                "exclude": [
+                    "node_modules",
+                    "!/app"
+                ]
+            },
+            "type": "pagekit-extension",
+            "extra": {
+                "icon": "icon.svg",
+                "scripts": "scripts.php"
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pagekit",
+                    "email": "info@pagekit.com",
+                    "homepage": "http://pagekit.com"
+                }
+            ],
+            "description": "A blog extensions with a built-in comment system."
+        },
+        {
+            "name": "pagekit/theme-one",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://pagekit.com/package/pagekit/theme-one/1.0.1.zip",
+                "reference": null,
+                "shasum": "2acaae7558661bdf71b7cea03055069d02e8d47c"
+            },
+            "archive": {
+                "exclude": [
+                    "!/app",
+                    "!/css",
+                    "/app/assets"
+                ]
+            },
+            "type": "pagekit-theme",
+            "extra": {
+                "image": "image.jpg"
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pagekit",
+                    "email": "info@pagekit.com",
+                    "homepage": "http://pagekit.com"
+                }
+            ],
+            "description": "Pagekit's default theme."
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

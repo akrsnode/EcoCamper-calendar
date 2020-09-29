@@ -1,0 +1,62 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'Pagekit\\Widget\\Model\\Widget',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'title' => 
+      array (
+        'name' => 'title',
+        'type' => 'string',
+        'column' => 'title',
+      ),
+      'type' => 
+      array (
+        'name' => 'type',
+        'type' => 'string',
+        'column' => 'type',
+      ),
+      'status' => 
+      array (
+        'name' => 'status',
+        'type' => 'integer',
+        'column' => 'status',
+      ),
+      'nodes' => 
+      array (
+        'name' => 'nodes',
+        'type' => 'simple_array',
+        'column' => 'nodes',
+      ),
+      'roles' => 
+      array (
+        'name' => 'roles',
+        'type' => 'simple_array',
+        'column' => 'roles',
+      ),
+      'data' => 
+      array (
+        'name' => 'data',
+        'type' => 'json_array',
+        'column' => 'data',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+    ),
+    'table' => '@system_widget',
+  ),
+);

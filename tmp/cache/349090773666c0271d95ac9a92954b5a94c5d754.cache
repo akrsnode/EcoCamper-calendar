@@ -1,0 +1,100 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'Pagekit\\Site\\Model\\Node',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+      'saving' => 
+      array (
+        0 => 'saving',
+      ),
+      'deleting' => 
+      array (
+        0 => 'deleting',
+      ),
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'parent_id' => 
+      array (
+        'name' => 'parent_id',
+        'type' => 'integer',
+        'column' => 'parent_id',
+      ),
+      'priority' => 
+      array (
+        'name' => 'priority',
+        'type' => 'integer',
+        'column' => 'priority',
+      ),
+      'status' => 
+      array (
+        'name' => 'status',
+        'type' => 'integer',
+        'column' => 'status',
+      ),
+      'slug' => 
+      array (
+        'name' => 'slug',
+        'type' => 'string',
+        'column' => 'slug',
+      ),
+      'path' => 
+      array (
+        'name' => 'path',
+        'type' => 'string',
+        'column' => 'path',
+      ),
+      'link' => 
+      array (
+        'name' => 'link',
+        'type' => 'string',
+        'column' => 'link',
+      ),
+      'title' => 
+      array (
+        'name' => 'title',
+        'type' => 'string',
+        'column' => 'title',
+      ),
+      'type' => 
+      array (
+        'name' => 'type',
+        'type' => 'string',
+        'column' => 'type',
+      ),
+      'menu' => 
+      array (
+        'name' => 'menu',
+        'type' => 'string',
+        'column' => 'menu',
+      ),
+      'roles' => 
+      array (
+        'name' => 'roles',
+        'type' => 'simple_array',
+        'column' => 'roles',
+      ),
+      'data' => 
+      array (
+        'name' => 'data',
+        'type' => 'json_array',
+        'column' => 'data',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+    ),
+    'table' => '@system_node',
+  ),
+);

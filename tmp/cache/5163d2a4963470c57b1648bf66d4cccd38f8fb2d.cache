@@ -1,0 +1,69 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'MHDev\\Calendar\\Model\\Category',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'name' => 
+      array (
+        'name' => 'name',
+        'type' => 'string',
+        'column' => 'name',
+      ),
+      'color' => 
+      array (
+        'name' => 'color',
+        'type' => 'string',
+        'column' => 'color',
+      ),
+      'author_id' => 
+      array (
+        'name' => 'author_id',
+        'type' => 'integer',
+        'column' => 'author_id',
+      ),
+      'data' => 
+      array (
+        'name' => 'data',
+        'type' => 'json_array',
+        'column' => 'data',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+      'events' => 
+      array (
+        'name' => 'events',
+        'type' => 'HasMany',
+        'targetEntity' => 'MHDev\\Calendar\\Model\\Event',
+        'keyFrom' => 'id',
+        'keyTo' => 'event_id',
+        'orderBy' => 
+        array (
+        ),
+      ),
+      'author' => 
+      array (
+        'name' => 'author',
+        'type' => 'BelongsTo',
+        'targetEntity' => 'Pagekit\\User\\Model\\User',
+        'keyFrom' => 'author_id',
+        'keyTo' => NULL,
+      ),
+    ),
+    'table' => '@calendar_categories',
+  ),
+);

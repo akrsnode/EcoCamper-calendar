@@ -1,0 +1,1290 @@
+<?php
+
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\RequestContext;
+
+/**
+ * UrlMatcher169559d8059ec8575259a27b81e4ceb19f644079.
+ *
+ * This class has been auto-generated
+ * by the Symfony Routing Component.
+ */
+class UrlMatcher169559d8059ec8575259a27b81e4ceb19f644079 extends Symfony\Component\Routing\Matcher\UrlMatcher
+{
+    /**
+     * Constructor.
+     */
+    public function __construct(RequestContext $context)
+    {
+        $this->context = $context;
+    }
+
+    public function match($pathinfo)
+    {
+        $allow = array();
+        $pathinfo = rawurldecode($pathinfo);
+        $context = $this->context;
+        $request = $this->request;
+
+        // @system/cache/clear
+        if ($pathinfo === '/admin/system/cache/clear') {
+            return array (  '_controller' => 'Pagekit\\Cache\\Controller\\CacheController::clearAction',  '_request' =>   array (    'value' =>     array (      'caches' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@system/cache/clear',);
+        }
+
+        // @system/intl
+        if (0 === strpos($pathinfo, '/system/intl') && preg_match('#^/system/intl/(?P<locale>[a-zA-Z0-9_-]+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => '@system/intl')), array (  '_maintenance' => true,  '_controller' => 'Pagekit\\Intl\\Controller\\IntlController::indexAction',  '_request' =>   array (    'value' =>     array (      0 => 'locale',    ),  ),));
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/admin/s')) {
+                if (0 === strpos($pathinfo, '/admin/system')) {
+                    if (0 === strpos($pathinfo, '/admin/system/package')) {
+                        // @system/package/themes
+                        if ($pathinfo === '/admin/system/package/themes') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::themesAction',  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/themes',);
+                        }
+
+                        if (0 === strpos($pathinfo, '/admin/system/package/e')) {
+                            // @system/package/extensions
+                            if ($pathinfo === '/admin/system/package/extensions') {
+                                return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::extensionsAction',  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/extensions',);
+                            }
+
+                            // @system/package/enable
+                            if ($pathinfo === '/admin/system/package/enable') {
+                                return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::enableAction',  '_request' =>   array (    'value' =>     array (      0 => 'name',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/enable',);
+                            }
+
+                        }
+
+                        // @system/package/disable
+                        if ($pathinfo === '/admin/system/package/disable') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::disableAction',  '_request' =>   array (    'value' =>     array (      0 => 'name',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/disable',);
+                        }
+
+                        // @system/package/upload
+                        if ($pathinfo === '/admin/system/package/upload') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::uploadAction',  '_request' =>   array (    'value' =>     array (      'type' => 'string',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/upload',);
+                        }
+
+                        // @system/package/install
+                        if ($pathinfo === '/admin/system/package/install') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::installAction',  '_request' =>   array (    'value' =>     array (      'package' => 'array',      'packagist' => 'boolean',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/install',);
+                        }
+
+                        // @system/package/uninstall
+                        if ($pathinfo === '/admin/system/package/uninstall') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\PackageController::uninstallAction',  '_request' =>   array (    'value' =>     array (      0 => 'name',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/package/uninstall',);
+                        }
+
+                    }
+
+                    if (0 === strpos($pathinfo, '/admin/system/marketplace')) {
+                        // @system/marketplace/themes
+                        if ($pathinfo === '/admin/system/marketplace/themes') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\MarketplaceController::themesAction',  '_request' =>   array (    'value' =>     array (      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/marketplace/themes',);
+                        }
+
+                        // @system/marketplace/extensions
+                        if ($pathinfo === '/admin/system/marketplace/extensions') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\MarketplaceController::extensionsAction',  '_request' =>   array (    'value' =>     array (      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: manage packages',    1 => 'system: access admin area',  ),  '_route' => '@system/marketplace/extensions',);
+                        }
+
+                    }
+
+                    if (0 === strpos($pathinfo, '/admin/system/update')) {
+                        // @system/update
+                        if ($pathinfo === '/admin/system/update') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\UpdateController::indexAction',  '_access' =>   array (    0 => 'system: software updates',    1 => 'system: access admin area',  ),  '_route' => '@system/update',);
+                        }
+
+                        // @system/update/download
+                        if ($pathinfo === '/admin/system/update/download') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\UpdateController::downloadAction',  '_request' =>   array (    'value' =>     array (      'url' => 'string',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: software updates',    1 => 'system: access admin area',  ),  '_route' => '@system/update/download',);
+                        }
+
+                        // @system/update/update
+                        if ($pathinfo === '/admin/system/update/update') {
+                            return array (  '_controller' => 'Pagekit\\Installer\\Controller\\UpdateController::updateAction',  '_request' =>   array (    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: software updates',    1 => 'system: access admin area',  ),  '_route' => '@system/update/update',);
+                        }
+
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/admin/site/widget')) {
+                    // @site/widget
+                    if ($pathinfo === '/admin/site/widget') {
+                        return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetController::indexAction',  '_access' =>   array (    0 => 'system: manage widgets',    1 => 'system: access admin area',  ),  '_route' => '@site/widget',);
+                    }
+
+                    // @site/widget/edit
+                    if ($pathinfo === '/admin/site/widget/edit') {
+                        return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetController::editAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',      'type' => 'string',    ),  ),  '_access' =>   array (    0 => 'system: manage widgets',    1 => 'system: access admin area',  ),  '_route' => '@site/widget/edit',);
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/api/site/widget')) {
+                // @site/api/widget
+                if ($pathinfo === '/api/site/widget') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_siteapiwidget;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::indexAction',  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget',);
+                }
+                not_siteapiwidget:
+
+                // @site/api/widget/get
+                if (preg_match('#^/api/site/widget/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_siteapiwidgetget;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/widget/get')), array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::getAction',  '_access' =>   array (    0 => 'system: manage widgets',  ),));
+                }
+                not_siteapiwidgetget:
+
+                // @site/api/widget/assign
+                if ($pathinfo === '/api/site/widget/assign') {
+                    return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::assignAction',  '_request' =>   array (    'value' =>     array (      0 => 'position',      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget/assign',);
+                }
+
+                // @site/api/widget/save
+                if ($pathinfo === '/api/site/widget') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_siteapiwidgetsave;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'widget' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget/save',);
+                }
+                not_siteapiwidgetsave:
+
+                // @site/api/widget/save_1
+                if (preg_match('#^/api/site/widget/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_siteapiwidgetsave_1;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/widget/save_1')), array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'widget' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),));
+                }
+                not_siteapiwidgetsave_1:
+
+                // @site/api/widget/delete
+                if (preg_match('#^/api/site/widget/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_siteapiwidgetdelete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/widget/delete')), array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),));
+                }
+                not_siteapiwidgetdelete:
+
+                // @site/api/widget/copy
+                if ($pathinfo === '/api/site/widget/copy') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_siteapiwidgetcopy;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::copyAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'int[]',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget/copy',);
+                }
+                not_siteapiwidgetcopy:
+
+                if (0 === strpos($pathinfo, '/api/site/widget/bulk')) {
+                    // @site/api/widget/bulksave
+                    if ($pathinfo === '/api/site/widget/bulk') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapiwidgetbulksave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'widgets' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget/bulksave',);
+                    }
+                    not_siteapiwidgetbulksave:
+
+                    // @site/api/widget/bulkdelete
+                    if ($pathinfo === '/api/site/widget/bulk') {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_siteapiwidgetbulkdelete;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Widget\\Controller\\WidgetApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: manage widgets',  ),  '_route' => '@site/api/widget/bulkdelete',);
+                    }
+                    not_siteapiwidgetbulkdelete:
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/dashboard')) {
+                // @dashboard
+                if ($pathinfo === '/admin/dashboard') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_dashboard;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::indexAction',  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@dashboard',);
+                }
+                not_dashboard:
+
+                // @dashboard/savewidgets
+                if ($pathinfo === '/admin/dashboard/savewidgets') {
+                    return array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::saveWidgetsAction',  '_request' =>   array (    'value' =>     array (      'widgets' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@dashboard/savewidgets',);
+                }
+
+                // @dashboard/save
+                if ($pathinfo === '/admin/dashboard') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dashboardsave;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::saveAction',  '_request' =>   array (    'value' =>     array (      0 => 'id',      'widget' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@dashboard/save',);
+                }
+                not_dashboardsave:
+
+                // @dashboard/save_1
+                if (preg_match('#^/admin/dashboard/(?P<id>\\w+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_dashboardsave_1;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@dashboard/save_1')), array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::saveAction',  '_request' =>   array (    'value' =>     array (      0 => 'id',      'widget' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),));
+                }
+                not_dashboardsave_1:
+
+                // @dashboard/delete
+                if (preg_match('#^/admin/dashboard/(?P<id>\\w+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_dashboarddelete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@dashboard/delete')), array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::deleteAction',  '_request' =>   array (    'value' =>     array (      0 => 'id',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),));
+                }
+                not_dashboarddelete:
+
+                // @dashboard/reorder
+                if ($pathinfo === '/admin/dashboard/reorder') {
+                    return array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::reorderAction',  '_request' =>   array (    'value' =>     array (      'order' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@dashboard/reorder',);
+                }
+
+                // @dashboard/weather
+                if ($pathinfo === '/admin/dashboard/weather') {
+                    return array (  '_controller' => 'Pagekit\\Dashboard\\Controller\\DashboardController::weatherAction',  '_request' =>   array (    'value' =>     array (      'data' => 'array',      'action' => 'string',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@dashboard/weather',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/system/finder')) {
+            // @system/finder
+            if ($pathinfo === '/system/finder') {
+                return array (  '_controller' => 'Pagekit\\Finder\\Controller\\FinderController::indexAction',  '_request' =>   array (    'value' =>     array (      0 => 'path',    ),  ),  '_route' => '@system/finder',);
+            }
+
+            // @system/finder/createfolder
+            if ($pathinfo === '/system/finder/createfolder') {
+                return array (  '_controller' => 'Pagekit\\Finder\\Controller\\FinderController::createFolderAction',  '_request' =>   array (    'value' =>     array (      0 => 'name',    ),    'csrf' => true,  ),  '_route' => '@system/finder/createfolder',);
+            }
+
+            if (0 === strpos($pathinfo, '/system/finder/re')) {
+                // @system/finder/rename
+                if ($pathinfo === '/system/finder/rename') {
+                    return array (  '_controller' => 'Pagekit\\Finder\\Controller\\FinderController::renameAction',  '_request' =>   array (    'value' =>     array (      0 => 'oldname',      1 => 'newname',    ),    'csrf' => true,  ),  '_route' => '@system/finder/rename',);
+                }
+
+                // @system/finder/removefiles
+                if ($pathinfo === '/system/finder/removefiles') {
+                    return array (  '_controller' => 'Pagekit\\Finder\\Controller\\FinderController::removeFilesAction',  '_request' =>   array (    'value' =>     array (      'names' => 'array',    ),    'csrf' => true,  ),  '_route' => '@system/finder/removefiles',);
+                }
+
+            }
+
+            // @system/finder/upload
+            if ($pathinfo === '/system/finder/upload') {
+                return array (  '_controller' => 'Pagekit\\Finder\\Controller\\FinderController::uploadAction',  '_request' =>   array (    'csrf' => true,  ),  '_route' => '@system/finder/upload',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/admin/s')) {
+                // @site/storage
+                if ($pathinfo === '/admin/site/storage') {
+                    return array (  '_controller' => 'Pagekit\\Finder\\Controller\\StorageController::indexAction',  '_access' =>   array (    0 => 'system: manage storage',    1 => 'system: access admin area',  ),  '_route' => '@site/storage',);
+                }
+
+                if (0 === strpos($pathinfo, '/admin/system')) {
+                    // @system/info
+                    if ($pathinfo === '/admin/system/info') {
+                        return array (  '_controller' => 'Pagekit\\Info\\Controller\\InfoController::indexAction',  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@system/info',);
+                    }
+
+                    // @system/smtp
+                    if ($pathinfo === '/admin/system/smtp') {
+                        return array (  '_controller' => 'Pagekit\\Mail\\Controller\\MailController::smtpAction',  '_request' =>   array (    'value' =>     array (      'option' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@system/smtp',);
+                    }
+
+                    // @system/email
+                    if ($pathinfo === '/admin/system/email') {
+                        return array (  '_controller' => 'Pagekit\\Mail\\Controller\\MailController::emailAction',  '_request' =>   array (    'value' =>     array (      'option' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@system/email',);
+                    }
+
+                    if (0 === strpos($pathinfo, '/admin/system/settings')) {
+                        // @system/settings
+                        if ($pathinfo === '/admin/system/settings') {
+                            return array (  '_controller' => 'Pagekit\\System\\Controller\\SettingsController::indexAction',  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@system/settings',);
+                        }
+
+                        // @system/settings/save
+                        if ($pathinfo === '/admin/system/settings/save') {
+                            return array (  '_controller' => 'Pagekit\\System\\Controller\\SettingsController::saveAction',  '_request' =>   array (    'value' =>     array (      'config' => 'array',      'options' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@system/settings/save',);
+                        }
+
+                        // @system/settings/config
+                        if ($pathinfo === '/admin/system/settings/config') {
+                            return array (  '_controller' => 'Pagekit\\System\\Controller\\SettingsController::configAction',  '_request' =>   array (    'value' =>     array (      0 => 'name',      'config' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@system/settings/config',);
+                        }
+
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/admin/site')) {
+                    if (0 === strpos($pathinfo, '/admin/site/page')) {
+                        // @site/page
+                        if ($pathinfo === '/admin/site/page') {
+                            return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeController::indexAction',  '_access' =>   array (    0 => 'site: manage site',    1 => 'system: access admin area',  ),  '_route' => '@site/page',);
+                        }
+
+                        // @site/page/edit
+                        if ($pathinfo === '/admin/site/page/edit') {
+                            return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeController::editAction',  '_request' =>   array (    'value' =>     array (      0 => 'id',      1 => 'menu',    ),  ),  '_access' =>   array (    0 => 'site: manage site',    1 => 'system: access admin area',  ),  '_route' => '@site/page/edit',);
+                        }
+
+                    }
+
+                    // @site/settings
+                    if ($pathinfo === '/admin/site/settings') {
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeController::settingsAction',  '_access' =>   array (    0 => 'system: access settings',    1 => 'system: access admin area',  ),  '_route' => '@site/settings',);
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/api/site')) {
+                // @site/api/link
+                if ($pathinfo === '/api/site/link') {
+                    return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeController::linkAction',  '_request' =>   array (    'value' =>     array (      0 => 'link',    ),  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/link',);
+                }
+
+                if (0 === strpos($pathinfo, '/api/site/menu')) {
+                    // @site/api/menu
+                    if ($pathinfo === '/api/site/menu') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_siteapimenu;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\MenuApiController::indexAction',  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/menu',);
+                    }
+                    not_siteapimenu:
+
+                    // @site/api/menu/save
+                    if ($pathinfo === '/api/site/menu') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapimenusave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\MenuApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'menu' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/menu/save',);
+                    }
+                    not_siteapimenusave:
+
+                    // @site/api/menu/delete
+                    if (preg_match('#^/api/site/menu/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_siteapimenudelete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/menu/delete')), array (  '_controller' => 'Pagekit\\Site\\Controller\\MenuApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      0 => 'id',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),));
+                    }
+                    not_siteapimenudelete:
+
+                }
+
+                if (0 === strpos($pathinfo, '/api/site/node')) {
+                    // @site/api/node
+                    if ($pathinfo === '/api/site/node') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_siteapinode;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::indexAction',  '_request' =>   array (    'value' =>     array (      0 => 'menu',    ),  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node',);
+                    }
+                    not_siteapinode:
+
+                    // @site/api/node/get
+                    if (preg_match('#^/api/site/node/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_siteapinodeget;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/node/get')), array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::getAction',  '_access' =>   array (    0 => 'site: manage site',  ),));
+                    }
+                    not_siteapinodeget:
+
+                    // @site/api/node/save
+                    if ($pathinfo === '/api/site/node') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapinodesave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'node' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node/save',);
+                    }
+                    not_siteapinodesave:
+
+                    // @site/api/node/save_1
+                    if (preg_match('#^/api/site/node/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapinodesave_1;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/node/save_1')), array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'node' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),));
+                    }
+                    not_siteapinodesave_1:
+
+                    // @site/api/node/delete
+                    if (preg_match('#^/api/site/node/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_siteapinodedelete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/node/delete')), array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),));
+                    }
+                    not_siteapinodedelete:
+
+                    if (0 === strpos($pathinfo, '/api/site/node/bulk')) {
+                        // @site/api/node/bulksave
+                        if ($pathinfo === '/api/site/node/bulk') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_siteapinodebulksave;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'nodes' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node/bulksave',);
+                        }
+                        not_siteapinodebulksave:
+
+                        // @site/api/node/bulkdelete
+                        if ($pathinfo === '/api/site/node/bulk') {
+                            if ($this->context->getMethod() != 'DELETE') {
+                                $allow[] = 'DELETE';
+                                goto not_siteapinodebulkdelete;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node/bulkdelete',);
+                        }
+                        not_siteapinodebulkdelete:
+
+                    }
+
+                    // @site/api/node/updateorder
+                    if ($pathinfo === '/api/site/node/updateOrder') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapinodeupdateorder;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::updateOrderAction',  '_request' =>   array (    'value' =>     array (      0 => 'menu',      'nodes' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node/updateorder',);
+                    }
+                    not_siteapinodeupdateorder:
+
+                    // @site/api/node/frontpage
+                    if ($pathinfo === '/api/site/node/frontpage') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_siteapinodefrontpage;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\NodeApiController::frontpageAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/node/frontpage',);
+                    }
+                    not_siteapinodefrontpage:
+
+                }
+
+                if (0 === strpos($pathinfo, '/api/site/page')) {
+                    // @site/api/page
+                    if ($pathinfo === '/api/site/page') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_siteapipage;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Site\\Controller\\PageApiController::indexAction',  '_access' =>   array (    0 => 'site: manage site',  ),  '_route' => '@site/api/page',);
+                    }
+                    not_siteapipage:
+
+                    // @site/api/page/get
+                    if (preg_match('#^/api/site/page/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_siteapipageget;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@site/api/page/get')), array (  '_controller' => 'Pagekit\\Site\\Controller\\PageApiController::getAction',  '_access' =>   array (    0 => 'site: manage site',  ),));
+                    }
+                    not_siteapipageget:
+
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/user')) {
+            if (0 === strpos($pathinfo, '/user/log')) {
+                // @user/login
+                if ($pathinfo === '/user/login') {
+                    return array (  '_maintenance' => true,  '_controller' => 'Pagekit\\User\\Controller\\AuthController::loginAction',  '_request' =>   array (    'value' =>     array (      0 => 'redirect',    ),  ),  '_route' => '@user/login',);
+                }
+
+                // @user/logout
+                if ($pathinfo === '/user/logout') {
+                    return array (  '_maintenance' => true,  '_controller' => 'Pagekit\\User\\Controller\\AuthController::logoutAction',  '_request' =>   array (    'value' =>     array (      'redirect' => 'string',    ),  ),  '_route' => '@user/logout',);
+                }
+
+            }
+
+            // @user/authenticate
+            if ($pathinfo === '/user/authenticate') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_userauthenticate;
+                }
+
+                return array (  '_maintenance' => true,  '_controller' => 'Pagekit\\User\\Controller\\AuthController::authenticateAction',  '_request' =>   array (    'value' =>     array (      'credentials' => 'array',      'remember_me' => 'boolean',      'redirect' => 'string',    ),  ),  '_route' => '@user/authenticate',);
+            }
+            not_userauthenticate:
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin/user')) {
+            // @user
+            if ($pathinfo === '/admin/user') {
+                return array (  '_controller' => 'Pagekit\\User\\Controller\\UserController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'user: manage users',  ),  '_route' => '@user',);
+            }
+
+            // @user/edit
+            if ($pathinfo === '/admin/user/edit') {
+                return array (  '_controller' => 'Pagekit\\User\\Controller\\UserController::editAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'user: manage users',  ),  '_route' => '@user/edit',);
+            }
+
+            // @user/permissions
+            if ($pathinfo === '/admin/user/permissions') {
+                return array (  '_controller' => 'Pagekit\\User\\Controller\\UserController::permissionsAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'user: manage user permissions',  ),  '_route' => '@user/permissions',);
+            }
+
+            // @user/roles
+            if ($pathinfo === '/admin/user/roles') {
+                return array (  '_controller' => 'Pagekit\\User\\Controller\\UserController::rolesAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'user: manage user permissions',  ),  '_route' => '@user/roles',);
+            }
+
+            // @user/settings
+            if ($pathinfo === '/admin/user/settings') {
+                return array (  '_controller' => 'Pagekit\\User\\Controller\\UserController::settingsAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'system: access settings',  ),  '_route' => '@user/settings',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/user')) {
+            if (0 === strpos($pathinfo, '/user/profile')) {
+                // @user/profile
+                if ($pathinfo === '/user/profile') {
+                    return array (  '_controller' => 'Pagekit\\User\\Controller\\ProfileController::indexAction',  '_route' => '@user/profile',);
+                }
+
+                // @user/profile/save
+                if ($pathinfo === '/user/profile/save') {
+                    return array (  '_controller' => 'Pagekit\\User\\Controller\\ProfileController::saveAction',  '_request' =>   array (    'value' =>     array (      'user' => 'array',    ),    'csrf' => true,  ),  '_route' => '@user/profile/save',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/user/re')) {
+                if (0 === strpos($pathinfo, '/user/registration')) {
+                    // @user/registration
+                    if ($pathinfo === '/user/registration') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\RegistrationController::indexAction',  '_captcha_routes' =>   array (    0 => '@user/registration/register',  ),  '_route' => '@user/registration',);
+                    }
+
+                    // @user/registration/register
+                    if ($pathinfo === '/user/registration/register') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\RegistrationController::registerAction',  '_request' =>   array (    'value' =>     array (      'user' => 'array',    ),  ),  '_captcha_verify' => true,  '_route' => '@user/registration/register',);
+                    }
+
+                    // @user/registration/activate
+                    if ($pathinfo === '/user/registration/activate') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\RegistrationController::activateAction',  '_request' =>   array (    'value' =>     array (      0 => 'user',      1 => 'key',    ),  ),  '_route' => '@user/registration/activate',);
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/user/resetpassword')) {
+                    // @user/resetpassword
+                    if ($pathinfo === '/user/resetpassword') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\ResetPasswordController::indexAction',  '_route' => '@user/resetpassword',);
+                    }
+
+                    // @user/resetpassword/request
+                    if ($pathinfo === '/user/resetpassword/request') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\ResetPasswordController::requestAction',  '_request' =>   array (    'value' =>     array (      0 => 'email',    ),  ),  '_route' => '@user/resetpassword/request',);
+                    }
+
+                    // @user/resetpassword/confirm
+                    if ($pathinfo === '/user/resetpassword/confirm') {
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\ResetPasswordController::confirmAction',  '_request' =>   array (    'value' =>     array (      0 => 'key',      1 => 'password',    ),  ),  '_route' => '@user/resetpassword/confirm',);
+                    }
+
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/api/user')) {
+                // @user/api
+                if ($pathinfo === '/api/user') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_userapi;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',      'limit' => 'int',    ),  ),  '_access' =>   array (    0 => 'user: manage users',  ),  '_route' => '@user/api',);
+                }
+                not_userapi:
+
+                // @user/api/count
+                if ($pathinfo === '/api/user/count') {
+                    return array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::countAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',    ),  ),  '_access' =>   array (    0 => 'user: manage users',  ),  '_route' => '@user/api/count',);
+                }
+
+                // @user/api/get
+                if (preg_match('#^/api/user/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_userapiget;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/get')), array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::getAction',  '_access' =>   array (    0 => 'user: manage users',  ),));
+                }
+                not_userapiget:
+
+                // @user/api/save
+                if ($pathinfo === '/api/user') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_userapisave;
+                    }
+
+                    return array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'user' => 'array',      0 => 'password',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage users',  ),  '_route' => '@user/api/save',);
+                }
+                not_userapisave:
+
+                // @user/api/save_1
+                if (preg_match('#^/api/user/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_userapisave_1;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/save_1')), array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'user' => 'array',      0 => 'password',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage users',  ),));
+                }
+                not_userapisave_1:
+
+                // @user/api/delete
+                if (preg_match('#^/api/user/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_userapidelete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/delete')), array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage users',  ),));
+                }
+                not_userapidelete:
+
+                if (0 === strpos($pathinfo, '/api/user/bulk')) {
+                    // @user/api/bulksave
+                    if ($pathinfo === '/api/user/bulk') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_userapibulksave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'users' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage users',  ),  '_route' => '@user/api/bulksave',);
+                    }
+                    not_userapibulksave:
+
+                    // @user/api/bulkdelete
+                    if ($pathinfo === '/api/user/bulk') {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_userapibulkdelete;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\UserApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage users',  ),  '_route' => '@user/api/bulkdelete',);
+                    }
+                    not_userapibulkdelete:
+
+                }
+
+                if (0 === strpos($pathinfo, '/api/user/role')) {
+                    // @user/api/role
+                    if ($pathinfo === '/api/user/role') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_userapirole;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::indexAction',  '_access' =>   array (    0 => 'user: manage user permissions',  ),  '_route' => '@user/api/role',);
+                    }
+                    not_userapirole:
+
+                    // @user/api/role/get
+                    if (preg_match('#^/api/user/role/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_userapiroleget;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/role/get')), array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::getAction',  '_access' =>   array (    0 => 'user: manage user permissions',  ),));
+                    }
+                    not_userapiroleget:
+
+                    // @user/api/role/save
+                    if ($pathinfo === '/api/user/role') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_userapirolesave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'role' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage user permissions',  ),  '_route' => '@user/api/role/save',);
+                    }
+                    not_userapirolesave:
+
+                    // @user/api/role/save_1
+                    if (preg_match('#^/api/user/role/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_userapirolesave_1;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/role/save_1')), array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'role' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage user permissions',  ),));
+                    }
+                    not_userapirolesave_1:
+
+                    // @user/api/role/delete
+                    if (preg_match('#^/api/user/role/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_userapiroledelete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@user/api/role/delete')), array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage user permissions',  ),));
+                    }
+                    not_userapiroledelete:
+
+                    if (0 === strpos($pathinfo, '/api/user/role/bulk')) {
+                        // @user/api/role/bulksave
+                        if ($pathinfo === '/api/user/role/bulk') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_userapirolebulksave;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'roles' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage user permissions',  ),  '_route' => '@user/api/role/bulksave',);
+                        }
+                        not_userapirolebulksave:
+
+                        // @user/api/role/bulkdelete
+                        if ($pathinfo === '/api/user/role/bulk') {
+                            if ($this->context->getMethod() != 'DELETE') {
+                                $allow[] = 'DELETE';
+                                goto not_userapirolebulkdelete;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\User\\Controller\\RoleApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'user: manage user permissions',  ),  '_route' => '@user/api/role/bulkdelete',);
+                        }
+                        not_userapirolebulkdelete:
+
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin')) {
+                // @system
+                if ($pathinfo === '/admin') {
+                    return array (  '_controller' => 'Pagekit\\System\\Controller\\AdminController::indexAction',  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@system',);
+                }
+
+                // @system/login
+                if ($pathinfo === '/admin/login') {
+                    return array (  '_maintenance' => true,  '_controller' => 'Pagekit\\System\\Controller\\AdminController::loginAction',  '_request' =>   array (    'value' =>     array (      'redirect' => 'string',      'message' => 'string',    ),  ),  '_route' => '@system/login',);
+                }
+
+                // @system/adminmenu
+                if ($pathinfo === '/admin/adminmenu') {
+                    return array (  '_controller' => 'Pagekit\\System\\Controller\\AdminController::adminMenuAction',  '_request' =>   array (    'value' =>     array (      'order' => 'array',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',  ),  '_route' => '@system/adminmenu',);
+                }
+
+                if (0 === strpos($pathinfo, '/admin/system/migration')) {
+                    // @system/migration
+                    if ($pathinfo === '/admin/system/migration') {
+                        return array (  '_controller' => 'Pagekit\\System\\Controller\\MigrationController::indexAction',  '_request' =>   array (    'value' =>     array (      'redirect' => 'string',    ),  ),  '_access' =>   array (    0 => 'system: software updates',    1 => 'system: access admin area',  ),  '_route' => '@system/migration',);
+                    }
+
+                    // @system/migration/migrate
+                    if ($pathinfo === '/admin/system/migration/migrate') {
+                        return array (  '_controller' => 'Pagekit\\System\\Controller\\MigrationController::migrateAction',  '_request' =>   array (    'value' =>     array (      'redirect' => 'string',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'system: software updates',    1 => 'system: access admin area',  ),  '_route' => '@system/migration/migrate',);
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/admin/blog')) {
+                    if (0 === strpos($pathinfo, '/admin/blog/post')) {
+                        // @blog/post
+                        if ($pathinfo === '/admin/blog/post') {
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\BlogController::postAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/post',);
+                        }
+
+                        // @blog/post/edit
+                        if ($pathinfo === '/admin/blog/post/edit') {
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\BlogController::editAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/post/edit',);
+                        }
+
+                    }
+
+                    // @blog/comment
+                    if ($pathinfo === '/admin/blog/comment') {
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\BlogController::commentAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'post' => 'int',      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'blog: manage comments',  ),  '_route' => '@blog/comment',);
+                    }
+
+                    // @blog/settings
+                    if ($pathinfo === '/admin/blog/settings') {
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\BlogController::settingsAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'system: access settings',  ),  '_route' => '@blog/settings',);
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/api/blog')) {
+                if (0 === strpos($pathinfo, '/api/blog/post')) {
+                    // @blog/api/post
+                    if ($pathinfo === '/api/blog/post') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_blogapipost;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/api/post',);
+                    }
+                    not_blogapipost:
+
+                    // @blog/api/post/get
+                    if (preg_match('#^/api/blog/post/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_blogapipostget;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@blog/api/post/get')), array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::getAction',  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),));
+                    }
+                    not_blogapipostget:
+
+                    // @blog/api/post/save
+                    if ($pathinfo === '/api/blog/post') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_blogapipostsave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'post' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/api/post/save',);
+                    }
+                    not_blogapipostsave:
+
+                    // @blog/api/post/save_1
+                    if (preg_match('#^/api/blog/post/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_blogapipostsave_1;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@blog/api/post/save_1')), array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'post' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),));
+                    }
+                    not_blogapipostsave_1:
+
+                    // @blog/api/post/delete
+                    if (preg_match('#^/api/blog/post/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_blogapipostdelete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@blog/api/post/delete')), array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),));
+                    }
+                    not_blogapipostdelete:
+
+                    // @blog/api/post/copy
+                    if ($pathinfo === '/api/blog/post/copy') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_blogapipostcopy;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::copyAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'int[]',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/api/post/copy',);
+                    }
+                    not_blogapipostcopy:
+
+                    if (0 === strpos($pathinfo, '/api/blog/post/bulk')) {
+                        // @blog/api/post/bulksave
+                        if ($pathinfo === '/api/blog/post/bulk') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_blogapipostbulksave;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'posts' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/api/post/bulksave',);
+                        }
+                        not_blogapipostbulksave:
+
+                        // @blog/api/post/bulkdelete
+                        if ($pathinfo === '/api/blog/post/bulk') {
+                            if ($this->context->getMethod() != 'DELETE') {
+                                $allow[] = 'DELETE';
+                                goto not_blogapipostbulkdelete;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\PostApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage own posts || blog: manage all posts',  ),  '_route' => '@blog/api/post/bulkdelete',);
+                        }
+                        not_blogapipostbulkdelete:
+
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/api/blog/comment')) {
+                    // @blog/api/comment
+                    if ($pathinfo === '/api/blog/comment') {
+                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                            $allow = array_merge($allow, array('GET', 'HEAD'));
+                            goto not_blogapicomment;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'post' => 'int',      'page' => 'int',      'limit' => 'int',    ),  ),  '_route' => '@blog/api/comment',);
+                    }
+                    not_blogapicomment:
+
+                    // @blog/api/comment/save
+                    if ($pathinfo === '/api/blog/comment') {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_blogapicommentsave;
+                        }
+
+                        return array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'comment' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_captcha_verify' => true,  '_route' => '@blog/api/comment/save',);
+                    }
+                    not_blogapicommentsave:
+
+                    // @blog/api/comment/save_1
+                    if (preg_match('#^/api/blog/comment/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'POST') {
+                            $allow[] = 'POST';
+                            goto not_blogapicommentsave_1;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@blog/api/comment/save_1')), array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'comment' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_captcha_verify' => true,));
+                    }
+                    not_blogapicommentsave_1:
+
+                    // @blog/api/comment/delete
+                    if (preg_match('#^/api/blog/comment/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                        if ($this->context->getMethod() != 'DELETE') {
+                            $allow[] = 'DELETE';
+                            goto not_blogapicommentdelete;
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => '@blog/api/comment/delete')), array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage comments',  ),));
+                    }
+                    not_blogapicommentdelete:
+
+                    if (0 === strpos($pathinfo, '/api/blog/comment/bulk')) {
+                        // @blog/api/comment/bulksave
+                        if ($pathinfo === '/api/blog/comment/bulk') {
+                            if ($this->context->getMethod() != 'POST') {
+                                $allow[] = 'POST';
+                                goto not_blogapicommentbulksave;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::bulkSaveAction',  '_request' =>   array (    'value' =>     array (      'comments' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage comments',  ),  '_route' => '@blog/api/comment/bulksave',);
+                        }
+                        not_blogapicommentbulksave:
+
+                        // @blog/api/comment/bulkdelete
+                        if ($pathinfo === '/api/blog/comment/bulk') {
+                            if ($this->context->getMethod() != 'DELETE') {
+                                $allow[] = 'DELETE';
+                                goto not_blogapicommentbulkdelete;
+                            }
+
+                            return array (  '_controller' => 'Pagekit\\Blog\\Controller\\CommentApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'blog: manage comments',  ),  '_route' => '@blog/api/comment/bulkdelete',);
+                        }
+                        not_blogapicommentbulkdelete:
+
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/calendar')) {
+                if (0 === strpos($pathinfo, '/admin/calendar/categories')) {
+                    // @calendar/categories
+                    if ($pathinfo === '/admin/calendar/categories') {
+                        return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CalendarController::categoriesAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'system: access settings',  ),  '_route' => '@calendar/categories',);
+                    }
+
+                    // @calendar/categories/edit
+                    if ($pathinfo === '/admin/calendar/categories/edit') {
+                        return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CalendarController::editCategoryAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'calendar: manage categories',  ),  '_route' => '@calendar/categories/edit',);
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/admin/calendar/events')) {
+                    // @calendar/events
+                    if ($pathinfo === '/admin/calendar/events') {
+                        return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CalendarController::eventsAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'system: access settings',  ),  '_route' => '@calendar/events',);
+                    }
+
+                    // @calendar/events/edit
+                    if ($pathinfo === '/admin/calendar/events/edit') {
+                        return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CalendarController::editEventAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_access' =>   array (    0 => 'system: access admin area',    1 => 'calendar: manage events',  ),  '_route' => '@calendar/events/edit',);
+                    }
+
+                }
+
+                // @calendar/settings
+                if ($pathinfo === '/admin/calendar/settings') {
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CalendarController::settingsAction',  '_access' =>   array (    0 => 'system: access admin area',    1 => 'system: access settings',  ),  '_route' => '@calendar/settings',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/calendar')) {
+            // @calendar
+            if ($pathinfo === '/calendar') {
+                return array (  '_controller' => 'MHDev\\Calendar\\Controller\\SiteController::indexAction',  '_node' => 3,  '_variables' =>   array (  ),  '_route' => '@calendar',);
+            }
+
+            // @calendar/category
+            if ($pathinfo === '/calendar/category') {
+                return array (  '_controller' => 'MHDev\\Calendar\\Controller\\SiteController::categoryAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),  ),  '_route' => '@calendar/category',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/api/calendar')) {
+            if (0 === strpos($pathinfo, '/api/calendar/category')) {
+                // @calendar/api/category
+                if ($pathinfo === '/api/calendar/category') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_calendarapicategory;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',    ),  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),  '_route' => '@calendar/api/category',);
+                }
+                not_calendarapicategory:
+
+                // @calendar/api/category/get
+                if (preg_match('#^/api/calendar/category/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_calendarapicategoryget;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/category/get')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::getAction',  '_access' =>   array (    0 => 'calendar: manage categories',  ),));
+                }
+                not_calendarapicategoryget:
+
+                // @calendar/api/category/save
+                if ($pathinfo === '/api/calendar/category') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapicategorysave;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'category' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),  '_route' => '@calendar/api/category/save',);
+                }
+                not_calendarapicategorysave:
+
+                // @calendar/api/category/save_1
+                if (preg_match('#^/api/calendar/category/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapicategorysave_1;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/category/save_1')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'category' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),));
+                }
+                not_calendarapicategorysave_1:
+
+                // @calendar/api/category/copy
+                if ($pathinfo === '/api/calendar/category/copy') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapicategorycopy;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::copyAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'int[]',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),  '_route' => '@calendar/api/category/copy',);
+                }
+                not_calendarapicategorycopy:
+
+                // @calendar/api/category/delete
+                if (preg_match('#^/api/calendar/category/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_calendarapicategorydelete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/category/delete')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),));
+                }
+                not_calendarapicategorydelete:
+
+                // @calendar/api/category/bulkdelete
+                if ($pathinfo === '/api/calendar/category/bulk') {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_calendarapicategorybulkdelete;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\CategoryApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage categories',  ),  '_route' => '@calendar/api/category/bulkdelete',);
+                }
+                not_calendarapicategorybulkdelete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/api/calendar/event')) {
+                // @calendar/api/event
+                if ($pathinfo === '/api/calendar/event') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_calendarapievent;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::indexAction',  '_request' =>   array (    'value' =>     array (      'filter' => 'array',      'page' => 'int',    ),  ),  '_route' => '@calendar/api/event',);
+                }
+                not_calendarapievent:
+
+                // @calendar/api/event/get
+                if (preg_match('#^/api/calendar/event/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_calendarapieventget;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/event/get')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::getAction',));
+                }
+                not_calendarapieventget:
+
+                // @calendar/api/event/save
+                if ($pathinfo === '/api/calendar/event') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapieventsave;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'event' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage events',  ),  '_route' => '@calendar/api/event/save',);
+                }
+                not_calendarapieventsave:
+
+                // @calendar/api/event/save_1
+                if (preg_match('#^/api/calendar/event/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapieventsave_1;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/event/save_1')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::saveAction',  '_request' =>   array (    'value' =>     array (      'event' => 'array',      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage events',  ),));
+                }
+                not_calendarapieventsave_1:
+
+                // @calendar/api/event/copy
+                if ($pathinfo === '/api/calendar/event/copy') {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_calendarapieventcopy;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::copyAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'int[]',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage events',  ),  '_route' => '@calendar/api/event/copy',);
+                }
+                not_calendarapieventcopy:
+
+                // @calendar/api/event/delete
+                if (preg_match('#^/api/calendar/event/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_calendarapieventdelete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => '@calendar/api/event/delete')), array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::deleteAction',  '_request' =>   array (    'value' =>     array (      'id' => 'int',    ),    'csrf' => true,  ),  '_access' =>   array (    0 => 'calendar: manage events',  ),));
+                }
+                not_calendarapieventdelete:
+
+                // @calendar/api/event/bulkdelete
+                if ($pathinfo === '/api/calendar/event/bulk') {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_calendarapieventbulkdelete;
+                    }
+
+                    return array (  '_controller' => 'MHDev\\Calendar\\Controller\\EventApiController::bulkDeleteAction',  '_request' =>   array (    'value' =>     array (      'ids' => 'array',    ),    'csrf' => true,  ),  '_route' => '@calendar/api/event/bulkdelete',);
+                }
+                not_calendarapieventbulkdelete:
+
+            }
+
+        }
+
+        throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
+    }
+}

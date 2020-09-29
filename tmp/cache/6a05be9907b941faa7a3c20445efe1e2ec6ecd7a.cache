@@ -1,0 +1,90 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'MHDev\\Calendar\\Model\\Event',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'title' => 
+      array (
+        'name' => 'title',
+        'type' => 'string',
+        'column' => 'title',
+      ),
+      'start' => 
+      array (
+        'name' => 'start',
+        'type' => 'datetime',
+        'column' => 'start',
+      ),
+      'end' => 
+      array (
+        'name' => 'end',
+        'type' => 'datetime',
+        'column' => 'end',
+      ),
+      'description' => 
+      array (
+        'name' => 'description',
+        'type' => 'text',
+        'column' => 'description',
+      ),
+      'allDay' => 
+      array (
+        'name' => 'allDay',
+        'type' => 'boolean',
+        'column' => 'allDay',
+      ),
+      'category_id' => 
+      array (
+        'name' => 'category_id',
+        'type' => 'integer',
+        'column' => 'category_id',
+      ),
+      'author_id' => 
+      array (
+        'name' => 'author_id',
+        'type' => 'integer',
+        'column' => 'author_id',
+      ),
+      'data' => 
+      array (
+        'name' => 'data',
+        'type' => 'json_array',
+        'column' => 'data',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+      'category' => 
+      array (
+        'name' => 'category',
+        'type' => 'BelongsTo',
+        'targetEntity' => 'MHDev\\Calendar\\Model\\Category',
+        'keyFrom' => 'category_id',
+        'keyTo' => NULL,
+      ),
+      'author' => 
+      array (
+        'name' => 'author',
+        'type' => 'BelongsTo',
+        'targetEntity' => 'Pagekit\\User\\Model\\User',
+        'keyFrom' => 'author_id',
+        'keyTo' => NULL,
+      ),
+    ),
+    'table' => '@calendar_events',
+  ),
+);

@@ -1,0 +1,126 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'Pagekit\\Blog\\Model\\Post',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+      'saving' => 
+      array (
+        0 => 'saving',
+      ),
+      'deleting' => 
+      array (
+        0 => 'deleting',
+      ),
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'title' => 
+      array (
+        'name' => 'title',
+        'type' => 'string',
+        'column' => 'title',
+      ),
+      'slug' => 
+      array (
+        'name' => 'slug',
+        'type' => 'string',
+        'column' => 'slug',
+      ),
+      'user_id' => 
+      array (
+        'name' => 'user_id',
+        'type' => 'integer',
+        'column' => 'user_id',
+      ),
+      'date' => 
+      array (
+        'name' => 'date',
+        'type' => 'datetime',
+        'column' => 'date',
+      ),
+      'content' => 
+      array (
+        'name' => 'content',
+        'type' => 'text',
+        'column' => 'content',
+      ),
+      'excerpt' => 
+      array (
+        'name' => 'excerpt',
+        'type' => 'text',
+        'column' => 'excerpt',
+      ),
+      'status' => 
+      array (
+        'name' => 'status',
+        'type' => 'smallint',
+        'column' => 'status',
+      ),
+      'modified' => 
+      array (
+        'name' => 'modified',
+        'type' => 'datetime',
+        'column' => 'modified',
+      ),
+      'comment_status' => 
+      array (
+        'name' => 'comment_status',
+        'type' => 'boolean',
+        'column' => 'comment_status',
+      ),
+      'comment_count' => 
+      array (
+        'name' => 'comment_count',
+        'type' => 'integer',
+        'column' => 'comment_count',
+      ),
+      'roles' => 
+      array (
+        'name' => 'roles',
+        'type' => 'simple_array',
+        'column' => 'roles',
+      ),
+      'data' => 
+      array (
+        'name' => 'data',
+        'type' => 'json_array',
+        'column' => 'data',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+      'user' => 
+      array (
+        'name' => 'user',
+        'type' => 'BelongsTo',
+        'targetEntity' => 'Pagekit\\User\\Model\\User',
+        'keyFrom' => 'user_id',
+        'keyTo' => NULL,
+      ),
+      'comments' => 
+      array (
+        'name' => 'comments',
+        'type' => 'HasMany',
+        'targetEntity' => 'Pagekit\\Blog\\Model\\Comment',
+        'keyFrom' => 'id',
+        'keyTo' => 'post_id',
+        'orderBy' => 
+        array (
+          'created' => 'DESC',
+        ),
+      ),
+    ),
+    'table' => '@blog_post',
+  ),
+);

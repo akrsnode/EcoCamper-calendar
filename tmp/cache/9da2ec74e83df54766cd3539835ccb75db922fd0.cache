@@ -1,0 +1,48 @@
+<?php return array (
+  'lifetime' => 0,
+  'data' => 
+  array (
+    'class' => 'Pagekit\\User\\Model\\Role',
+    'eventPrefix' => NULL,
+    'events' => 
+    array (
+      'saving' => 
+      array (
+        0 => 'saving',
+      ),
+    ),
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'name' => 'id',
+        'type' => 'integer',
+        'id' => true,
+        'column' => 'id',
+      ),
+      'name' => 
+      array (
+        'name' => 'name',
+        'type' => 'string',
+        'column' => 'name',
+      ),
+      'priority' => 
+      array (
+        'name' => 'priority',
+        'type' => 'integer',
+        'column' => 'priority',
+      ),
+      'permissions' => 
+      array (
+        'name' => 'permissions',
+        'type' => 'simple_array',
+        'column' => 'permissions',
+      ),
+    ),
+    'isMappedSuperclass' => false,
+    'relations' => 
+    array (
+    ),
+    'table' => '@system_role',
+  ),
+);

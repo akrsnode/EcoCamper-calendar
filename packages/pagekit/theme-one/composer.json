@@ -1,0 +1,22 @@
+{
+    "name": "pagekit/theme-one",
+    "type": "pagekit-theme",
+    "version": "1.0.1",
+    "title": "One",
+    "description": "Pagekit's default theme.",
+    "license": "MIT",
+    "copyright": "(c) 2016 Pagekit",
+    "authors": [
+        {
+            "name": "Pagekit",
+            "email": "info@pagekit.com",
+            "homepage": "http://pagekit.com"
+        }
+    ],
+    "extra": {
+        "image": "image.jpg"
+    },
+    "archive": {
+        "exclude": ["!/app", "!/css", "/app/assets"]
+    }
+}
