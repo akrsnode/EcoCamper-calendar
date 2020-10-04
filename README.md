@@ -1,6 +1,6 @@
 <img src="https://github.com/vansmoe/EcoCamper/blob/master/img/logo.svg" width="200">
 
-Web app created for EcoCamper to manage reservation calendar. Build using lightweight and very simple CMS - [Pagekit](http://pagekit.com) with [Calendar](https://github.com/Markusch85/pagekit-calendar) plugin.
+Web app created for EcoCamper to manage reservation calendar. Build using lightweight and very simple CMS - [Pagekit](http://pagekit.com) with [Calendar](https://github.com/Markusch85/pagekit-calendar) plugin. You can see live version [here](http://www.pagekit.ecocamper.eu/kalendarz).
 
 
 ## How to run
